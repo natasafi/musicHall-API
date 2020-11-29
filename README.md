@@ -11,13 +11,18 @@ Check on your terminal by running
 ```bash
 python --version
 ```
+Download the virtual env for python with 
+```bash
+pip install pipenv
+```
 If you have not downloaded docker do so as per [docker](https://www.docker.com/products/docker-desktop)
+
 Then
 ```bash
 # clone the repository
 https://github.com/natasafi/lyricsAPI.git
 
-# open it on your favourite IDE
+# open it on your favourite IDE. Depending on what you use you have to install the python plugin.
 # ensuring that you are on the right path of the project run the following command on your terminal to build the image
 docker build -t musichall_api .
 
@@ -29,7 +34,7 @@ docker ps
 
 ```
 ## Available Endpoints
-Open your [browser](http://127.0.0.1:5000)
+Open your [browser](http://127.0.0.1:5000) or the tab that opened once you run your docker image and navigate to the following:
 ```
 EndPoint                | Result
 ------------------------| -------------
@@ -69,7 +74,8 @@ artistID                |
 
 * PyCharm : IDE
 
-* Docker : creates an instance of the app with the relevant dependecies
+* Docker : creates an instance of the app with the relevant dependencies
+
 ## TPAPIs
 [musicbrainz](https://musicbrainz.org/doc/MusicBrainz_API)
 
