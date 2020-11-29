@@ -29,7 +29,7 @@ def get_artist_data():
 def request_lyrics():
     artist = request.form.get("artist")
     title = request.form.get("song")
-    url = f'https://api.lyrics.ovh/v1/{artist}/{title}'
+    url = f"https://api.lyrics.ovh/v1/{artist}/{title}"
     res = requests.get(url)
 
     if res.status_code != 200:
@@ -50,7 +50,7 @@ def request_lyrics():
 @app.route("/artistId", methods=['POST'])
 def request_artist_id():
     artist = request.form.get("artist")
-    url = f'https://musicbrainz.org/ws/2/artist?query={artist}&fmt=json'
+    url = f"https://musicbrainz.org/ws/2/artist?query={artist}&fmt=json"
     res = requests.get(url)
     if res.status_code != 200:
         print(res.text)
