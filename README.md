@@ -6,10 +6,26 @@ A python project that fetches lyrics and artists data from an API.
 
 If you have not downloaded python do so as per documentation [python](https://www.python.org/downloads/).
 
+Check on your terminal by running
+
+```bash
+python --version
+```
+If you have not downloaded docker do so as per [docker](https://www.docker.com/products/docker-desktop)
+Then
 ```bash
 # clone the repository
 https://github.com/natasafi/lyricsAPI.git
 
+# open it on your favourite IDE
+# ensuring that you are on the right path of the project run the following command on your terminal to build the image
+docker build -t musichall_api .
+
+# ensure that is being built after the end of the process with
+docker ps
+# run the Docker image of our app with the following command which will expose it to a port on the browser
+ docker run -p 5000:5000 musichall_api
+# follow the link and navigate to the following endpoints on the browser
 
 ```
 ## Available Endpoints
@@ -53,6 +69,7 @@ artistID                |
 
 * PyCharm : IDE
 
+* Docker : creates an instance of the app with the relevant dependecies
 ## TPAPIs
 [musicbrainz](https://musicbrainz.org/doc/MusicBrainz_API)
 
