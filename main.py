@@ -5,8 +5,6 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-cache = dict()
-
 
 # landing page
 @app.route('/', methods=['GET'])
@@ -43,7 +41,8 @@ def request_lyrics():
         if len(lyrics) >= 1:
             return render_template('lyricsResults.html', artist=artist, title=title, lyrics=lyrics)
         else:
-            # for certain searches I was getting no lyrics sometimes. Thought to be good to add a warning since I spotted it.
+            # for certain searches I was getting no lyrics sometimes. Thought to be good to add a warning since I
+            # spotted it.
             return render_template('empty.html')
 
 
@@ -60,13 +59,10 @@ def request_artist_id():
         jsonData: dict = json.loads(res.text)
         jsonId = jsonData['artists'][0]['id']
         jsonType = jsonData['artists'][0]['type']
-        jsonCountry = jsonData['artists'][0]['country']
 
         # didn't manage to find a proper way to map the values of the json response to a dic with a for loop (－‸ლ)
-        info = {'id': jsonId, 'type': jsonType, 'country': jsonCountry}
+        info = {'id': jsonId, 'type': jsonType}
         print(info)
-
-        # for i in jsonArtist:
 
         return render_template('artistResults.html', artist=artist, info=info)
 
